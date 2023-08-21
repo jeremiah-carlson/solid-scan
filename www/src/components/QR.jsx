@@ -5,7 +5,7 @@ const QR = (props)=>{
 
   QRCode.toString(props.qrString, { errorCorrectionLevel: 'H' }, (err, url)=>{
     if (err == null){
-      console.log(url);
+      //console.log(url);
       qrUrl = url;
     } else {
       console.log(err);

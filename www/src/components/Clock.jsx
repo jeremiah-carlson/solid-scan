@@ -20,7 +20,7 @@ const Clock = ()=>{
 
     return (
         <>
-        <h1 class="text-slate-100">{clockTime()}</h1>
+        <h1 class="text-slate-100 font-semibold text-center text-2xl">{clockTime()}</h1>
         </>
     );
 };
