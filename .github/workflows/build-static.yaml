@@ -12,5 +12,6 @@ jobs:
         with:
           node-version: '18'
       - run: cd www
-      - run: npm install
+      - run: ls
+      - run: npm install .
       - run: npm run build
