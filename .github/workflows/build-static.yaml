@@ -1,7 +1,5 @@
 name: build-static
-on: 
-  push:
-    branches: [main]
+on: [workflow_dispatch]
   
 jobs:
   run-build:
