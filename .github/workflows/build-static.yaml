@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: cd www
       - run: ls
-      - run: npm install .
+      - run: echo $(pwd)
+      - run: cd www && npm install .
       - run: npm run build
