@@ -1,5 +1,8 @@
-
 const conf = {
+    output: {
+        origin: origin,
+        path: 'scan/output',
+    },
     delims: {
         settings: '@@',
         mainInput: '-'
