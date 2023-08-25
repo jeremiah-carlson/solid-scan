@@ -17,7 +17,9 @@ const conf = {
             options: ['option1', 'option2']
         },
     ],
-
+    input: {
+        labels: ['test1', 'test2'],
+    },
 };
 
 export default conf;
