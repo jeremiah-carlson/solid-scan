@@ -10,7 +10,7 @@ const conf = {
     categories: [
         {
             name: 'Category1',
-            options: ['option1', 'option2']
+            options: ['option1', 'option2', 'option3']
         },
         {
             name: 'Category2',
