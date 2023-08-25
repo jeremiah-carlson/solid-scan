@@ -6,17 +6,16 @@ import Category from '../components/Category';
 import ScanResult from '../components/ScanResult';
 
 import handleScanEvent from '../logic/ScanEvents'
+import SettingDialogSet from '../components/SettingDialogSet';
+
+import conf from '../configs/default';
 
 function App() {
   return (
     <form action="POST" onsubmit={(e)=>handleScanEvent(e)} >
+    
     <div class="bg-slate-800 w-screen h-screen flex flex-col justify-evenly align-middle">
-      <dialog class="w-screen h-screen" id="setLocation">
-        <QRArray qrList={["Test1","Test2", "Test1","Test2", "Test1","Test2"]}></QRArray>
-      </dialog>
-      <dialog class="w-screen h-screen" id="setStation">
-        <QRArray qrList={["Test1","Test2", "Test1","Test2", "Test1","Test2"]}></QRArray>
-      </dialog>
+
 
       <div>
         <div class="absolute top-0 left-0 w-20 h-20"><QR qrString="@@setting@@"></QR></div>
@@ -36,6 +35,7 @@ function App() {
       
 
     </div>
+    <SettingDialogSet categories={conf.categories}/>
     </form>
   );
 }
