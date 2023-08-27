@@ -14,7 +14,12 @@ const QR = (props)=>{
   });
 
   return (
-      <div class="rounded-xl overflow-clip" innerHTML={qrUrl}></div>
+    <div class="">
+    <h1 class='text-slate-200 text-center font-bold'>{props.label}</h1>
+    <div class="rounded-xl overflow-clip" innerHTML={qrUrl}></div>
+    </div>
+        
+      
   );
 };
 
