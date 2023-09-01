@@ -10,9 +10,11 @@ import SettingDialogSet from '../components/SettingDialogSet';
 
 import conf from '../configs/default';
 
+//export const [dialogVis, setDialogVis] = createSignal(conf.categories.map(() => false));
+
 function App() {
   return (
-    <form action="POST" onsubmit={(e)=>handleScanEvent(e)} >
+    <form action="POST" onsubmit={(e)=>handleScanEvent(e, conf)} >
     
     <div class="bg-slate-800 w-screen h-screen flex flex-col justify-evenly align-middle">
 

@@ -1,16 +1,21 @@
 import { For, createSignal } from 'solid-js';
+import { createStore } from 'solid-js/store';
 import conf from '../configs/default'
 
-export const [categoryOptionIndex, setCategoryOptionIndex] = createSignal(conf.categories.map(()=>0));
+export const [state, setState] = createStore(conf.categories.map((elem)=>{
+    return {
+        name: elem.name,
+        currentId: 0
+    }
+}));
 
 const Category = (props)=>{
     let cat = props.category;
     let index = Number(props.index);
-    let selectedOption = cat.options[categoryOptionIndex()[index]]
     return (
         <div class="flex flex-col justify-center align-middle">
                     <h1 class="text-slate-100 text-center text-3xl p-2">{cat.name}</h1>
-                    <h1 name={cat.name} class="text-xl text-center bg-slate-400" data-category={cat.name} data-option={cat.options[categoryOptionIndex()[index]]}>{cat.options[categoryOptionIndex()[index]]}</h1>
+                    <h1 name={cat.name} class="text-xl text-center bg-slate-400 cust-category" data-category={cat.name} data-option={cat.options[state[index].currentId]}>{cat.options[state[index].currentId]}</h1>
         </div>
     )
 }

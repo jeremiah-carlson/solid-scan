@@ -1,6 +1,6 @@
 import QR from './QR'
 
-import conf from '../configs/default';
+//import conf from '../configs/default';
 
 const QRArray = (props)=>{
 

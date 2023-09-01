@@ -1,10 +1,6 @@
 import { createSignal, onCleanup } from "solid-js";
 
-function getCurrentStrfTime() {
-    let date = new Date();
-    let out = `${date.getHours()}:${('0' + date.getUTCMinutes()).slice(-2)}:${('0' + date.getUTCSeconds()).slice(-2)}`;
-    return out;
-};
+import { getCurrentStrfTime } from "../logic/Helpers";
 
 
 const Clock = ()=>{

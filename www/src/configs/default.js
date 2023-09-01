@@ -9,16 +9,16 @@ const conf = {
     },
     categories: [
         {
-            name: 'Category1',
-            options: ['option1', 'option2', 'option3']
+            name: 'Country',
+            options: ['US', 'CA', 'UK']
         },
         {
-            name: 'Category2',
-            options: ['option1', 'option2']
+            name: 'State',
+            options: ['NC', 'CA', 'NB']
         },
     ],
     input: {
-        labels: ['test1', 'test2'],
+        labels: ['fname', 'lname'],
     },
 };
 

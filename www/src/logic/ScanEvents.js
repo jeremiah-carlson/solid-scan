@@ -1,17 +1,17 @@
-import conf from "../configs/default";
-
 import { setLastScan } from "../components/ScanResult";
 import { setMainInputVal } from "../components/MainInput";
 import { setDialogVis } from "../components/SettingDialogSet";
-import { setCategoryOptionIndex } from "../components/CategorySet";
+import { setState } from "../components/CategorySet";
+import { PostMain } from "./PostMain";
+import { AssembleBodyData, FormatDisplayedInput } from "./Helpers";
+
+const scanQueue = [];
 
 
-const postURL = new URL(conf.output.path, conf.output.origin);
-let currentCategoryOptions = conf.categories.map(()=>0);
-
-const handleScanEvent = (event)=>{
+const handleScanEvent = (event, conf)=>{
     event.preventDefault();
 
+    let postURL = new URL(conf.output.path, conf.output.origin);
     let entry = event.target.querySelector('#MainInput').value;
 
     if (entry.startsWith(conf.delims.settings)) {// Setting
@@ -26,24 +26,26 @@ const handleScanEvent = (event)=>{
             return i == tmpSetting.index
          }));
         
-        if ((tmpSetting.index > 0)  && (tmpSetting.index <= currentCategoryOptions.length)) {
-            currentCategoryOptions[tmpSetting.index-1] = Number(tmpSetting.option);
-            setCategoryOptionIndex(currentCategoryOptions);
-            console.log(tmpSetting, currentCategoryOptions);
+        if ((tmpSetting.index > 0)  && (tmpSetting.index <= conf.categories.length)) {// Set Category Option
+            setState(tmpSetting.index-1, 'currentId', Number(tmpSetting.option));
         };
         
-
-        
-
-        //document.querySelectorAll('dialog').forEach((x)=>{x.close();});
-        //document.querySelector(`#dialog-${'Category1'}`).show();
         console.log('Is Setting');
 
     } else if (entry.split(conf.delims.mainInput).length == conf.input.labels.length) {// Valid Entry
-        setLastScan(entry);
+        let entryArr = entry.split(conf.delims.mainInput);
+        let inputParsed = Object.fromEntries(conf.input.labels.map((l, i)=>[l, entryArr[i]]))
+        let bdyData = AssembleBodyData(inputParsed);
+
+        setLastScan(FormatDisplayedInput(inputParsed));
+        scanQueue.push(bdyData);
+        
+        //PostMain(postURL, AssembleBodyData(inputParsed));
+        console.log(scanQueue);
         console.log('Is Input');
     } else {// Invalid
-        console.log('Invalid input');
+        setLastScan(`Invalid Input: ${entry}`);
+        console.log(`Invalid Input: ${entry}`);
     };
 
     document.querySelector("#MainInput").value = '';
