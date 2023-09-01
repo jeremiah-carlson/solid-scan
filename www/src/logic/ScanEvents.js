@@ -1,4 +1,4 @@
-import { setLastScan } from "../components/ScanResult";
+import { setLastScan, setScanValidation } from "../components/ScanResult";
 import { setMainInputVal } from "../components/MainInput";
 import { setDialogVis } from "../components/SettingDialogSet";
 import { setState } from "../components/CategorySet";
@@ -35,6 +35,7 @@ const handleScanEvent = (event, conf)=>{
         console.log('Is Setting');
 
     } else if (entry.split(conf.delims.mainInput).length == conf.input.labels.length) {// Valid Entry
+        setScanValidation(true);
         let entryArr = entry.split(conf.delims.mainInput);
         let inputParsed = Object.fromEntries(conf.input.labels.map((l, i)=>[l, entryArr[i]]))
         let bdyData = AssembleBodyData(inputParsed);
@@ -45,6 +46,7 @@ const handleScanEvent = (event, conf)=>{
         //PostMain(postURL, AssembleBodyData(inputParsed));
         console.log(scanQueue);
         console.log('Is Input');
+        setTimeout(()=>{setScanValidation(false)}, 500);
     } else {// Invalid
         setLastScan(`Invalid Input: ${entry}`);
         console.log(`Invalid Input: ${entry}`);
