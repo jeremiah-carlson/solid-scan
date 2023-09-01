@@ -5,7 +5,7 @@ import conf from '../configs/default'
 export const [state, setState] = createStore(conf.categories.map((elem)=>{
     return {
         name: elem.name,
-        currentId: 0
+        currentId: localStorage.getItem(`defaultCategory${elem.name}`) ? Number(localStorage.getItem(`defaultCategory${elem.name}`)) : 0
     }
 }));
 

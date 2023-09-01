@@ -6,6 +6,7 @@ import { PostMain } from "./PostMain";
 import { AssembleBodyData, FormatDisplayedInput } from "./Helpers";
 
 const scanQueue = [];
+PostMain(scanQueue);
 
 
 const handleScanEvent = (event, conf)=>{
@@ -28,6 +29,7 @@ const handleScanEvent = (event, conf)=>{
         
         if ((tmpSetting.index > 0)  && (tmpSetting.index <= conf.categories.length)) {// Set Category Option
             setState(tmpSetting.index-1, 'currentId', Number(tmpSetting.option));
+            localStorage.setItem(`defaultCategory${conf.categories[tmpSetting.index-1].name}`, tmpSetting.option);
         };
         
         console.log('Is Setting');
@@ -38,7 +40,7 @@ const handleScanEvent = (event, conf)=>{
         let bdyData = AssembleBodyData(inputParsed);
 
         setLastScan(FormatDisplayedInput(inputParsed));
-        scanQueue.push(bdyData);
+        scanQueue.push({destination: postURL, data: bdyData});
         
         //PostMain(postURL, AssembleBodyData(inputParsed));
         console.log(scanQueue);
