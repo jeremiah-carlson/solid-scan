@@ -18,7 +18,7 @@ const SettingDialogSet = (props)=>{
     <>
         <For each={props.conf.categories}>{
             (category, i)=>{
-            return <SettingDialog index={i()} setting={category.name} qrList={category.options.map((x, ind)=>{return {label:x, value:['', i(), ind].join(props.conf.delims.settings)}})}/>
+            return <SettingDialog index={i()} setting={category.name} qrList={category.options.map((x, ind)=>{return {label:x, value:['', i()+1, ind].join(props.conf.delims.settings)}})}/>
         }
         }</For>
     </>
