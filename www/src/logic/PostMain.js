@@ -13,6 +13,7 @@ export function PostMain(queue){
                 switch (resp.status){
                     case 200:
                         console.log('Post Success');
+                        PostMain(queue);
                         break;
                     case 404:
                         console.log('Not found!');
