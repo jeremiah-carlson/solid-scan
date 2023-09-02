@@ -38,7 +38,7 @@ const handleScanEvent = (event, conf)=>{
         setScanValidation(true);
         let entryArr = entry.split(conf.delims.mainInput);
         let inputParsed = Object.fromEntries(conf.input.labels.map((l, i)=>[l, entryArr[i]]))
-        let bdyData = AssembleBodyData(inputParsed);
+        let bdyData = AssembleBodyData(Object.assign({}, inputParsed, conf.input.constants));
 
         setLastScan(FormatDisplayedInput(inputParsed));
         scanQueue.push({destination: postURL, data: bdyData});

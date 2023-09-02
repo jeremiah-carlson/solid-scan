@@ -27,6 +27,9 @@ const conf = {
     ],
     input: {
         labels: ['ticketNo', 'section', 'seat'],
+        constants: {
+            'company': 'Ticket CO.',
+        },
     },
 };
 
