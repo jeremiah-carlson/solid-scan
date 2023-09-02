@@ -1,7 +1,7 @@
 const conf = {
     output: {
         origin: origin,
-        path: 'scan/output',
+        path: 'scan/output/',
     },
     delims: {
         settings: '@@',
@@ -14,11 +14,11 @@ const conf = {
         },
         {
             name: 'Test2',
-            options: ['NC', 'CA', 'NB']
+            options: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
         },
     ],
     input: {
-        labels: ['fname', 'lname'],
+        labels: ['val1', 'val2'],
     },
 };
 

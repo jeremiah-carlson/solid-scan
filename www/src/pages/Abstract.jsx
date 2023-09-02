@@ -8,22 +8,20 @@ import ScanResult from '../components/ScanResult';
 import handleScanEvent from '../logic/ScanEvents'
 import SettingDialogSet from '../components/SettingDialogSet';
 
-import conf from '../configs/default';
-
-function App() {
+export default function Abstract(props) {// <-- Change function name
   return (
-    <form action="POST" onsubmit={(e)=>handleScanEvent(e, conf)} >
+    <form action="POST" onsubmit={(e)=>handleScanEvent(e, props.conf)} >
     
     <div class="bg-slate-800 w-screen h-screen flex flex-col justify-evenly align-middle">
 
 
       <div>
-        <div class="absolute top-0 left-0 w-20 h-20"><QR label qrString={['', '0', '0'].join(conf.delims.settings)}></QR></div>
+        <div class="absolute top-0 left-0 w-20 h-20"><QR label qrString={['', '0', '0'].join(props.conf.delims.settings)}></QR></div>
         <div class="absolute top-2 right-4"><Clock></Clock></div>
       </div>
 
       
-      <CategorySet conf={conf}/>
+      <CategorySet conf={props.conf}/>
 
       <div class='w-full flex flex-row justify-center'>
         <MainInput></MainInput>
@@ -35,9 +33,8 @@ function App() {
       
 
     </div>
-    <SettingDialogSet conf={conf} categories={conf.categories}/>
+    <SettingDialogSet conf={props.conf}/>
     </form>
   );
-}
+};
 
-export default App;
