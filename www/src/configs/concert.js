@@ -9,19 +9,19 @@ const conf = {
     },
     categories: [
         {
-            name: 'City',
+            name: 'city',
             options: ['Austin','Atlanta','Tennessee', 'Chicago','Baltimore','New Orleans','Boulder']
         },
         {
-            name: 'Artist',
+            name: 'artist',
             options: ['Lightning Hopkins', 'SRV', 'Eric Clapton', 'Muddy Waters', 'Lemon Jefferson', 'Buddy Guy', 'John Hurt']
         },
         {
-            name: 'Ticket',
+            name: 'ticket',
             options: ['General','Backstage','VIP', 'Staff']
         },
         {
-            name: 'Night',
+            name: 'night',
             options: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         },
     ],
