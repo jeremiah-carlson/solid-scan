@@ -8,9 +8,9 @@ import ScanResult from '../components/ScanResult';
 import handleScanEvent from '../logic/ScanEvents'
 import SettingDialogSet from '../components/SettingDialogSet';
 
-import conf from '../configs/default';
+import conf from '../configs/test';
 
-function App() {
+function Test() {
   return (
     <form action="POST" onsubmit={(e)=>handleScanEvent(e, conf)} >
     
@@ -40,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default Test;

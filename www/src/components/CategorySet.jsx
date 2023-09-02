@@ -1,13 +1,8 @@
 import { For, createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
-import conf from '../configs/default'
+//import conf from '../configs/default'
 
-export const [state, setState] = createStore(conf.categories.map((elem)=>{
-    return {
-        name: elem.name,
-        currentId: localStorage.getItem(`defaultCategory${elem.name}`) ? Number(localStorage.getItem(`defaultCategory${elem.name}`)) : 0
-    }
-}));
+export const [state, setState] = createStore([{name: ''}]);
 
 const Category = (props)=>{
     let cat = props.category;
@@ -21,10 +16,18 @@ const Category = (props)=>{
 }
 
 
-const CategorySet = ()=>{
+const CategorySet = (props)=>{
+
+    props.conf.categories.forEach((elem, i)=>{
+        setState(i, {
+            name: elem.name,
+            currentId: localStorage.getItem(`defaultCategory${elem.name}`) ? Number(localStorage.getItem(`defaultCategory${elem.name}`)) : 0
+        });
+    });
+
     return (
         <div class="grid grid-cols-2 gap-y-2 gap-x-32 align-middle px-20 py-8">
-            <For each={conf.categories}>{
+            <For each={props.conf.categories}>{
                 (cat, i)=><Category index={i()} category={cat}/>
             }</For>
         </div>

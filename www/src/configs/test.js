@@ -9,11 +9,11 @@ const conf = {
     },
     categories: [
         {
-            name: 'Test1',
+            name: 'Test1__0',
             options: ['1','2','3', '4','5','6','7', '8', '9','10']
         },
         {
-            name: 'Test2',
+            name: 'Test2__0',
             options: ['NC', 'CA', 'NB']
         },
     ],

@@ -1,11 +1,8 @@
 import { createSignal } from "solid-js";
 
-import conf from "../configs/default";
 import QRArray from "./QRArray";
 
-
-
-export const [dialogVis, setDialogVis] = createSignal(conf.categories.map(() => false));
+export const [dialogVis, setDialogVis] = createSignal(Array.from({length: 20}, ()=>false));
 
 const SettingDialog = (props)=>{
     return (
@@ -16,13 +13,12 @@ const SettingDialog = (props)=>{
 };
 
 const SettingDialogSet = (props)=>{
-    let categoryList = props.categories;
-    
+    setDialogVis(props.conf.categories.map(() => false));
     return (
     <>
-        <For each={categoryList}>{
+        <For each={props.conf.categories}>{
             (category, i)=>{
-            return <SettingDialog index={i()} setting={category.name} qrList={category.options.map((x, ind)=>{return {label:x, value:['', i(), ind].join(conf.delims.settings)}})}/>
+            return <SettingDialog index={i()} setting={category.name} qrList={category.options.map((x, ind)=>{return {label:x, value:['', i(), ind].join(props.conf.delims.settings)}})}/>
         }
         }</For>
     </>
