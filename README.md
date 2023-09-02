@@ -1,0 +1,2 @@
+# Solid Scan
+[![Azure Static Web Apps CI/CD](https://github.com/jeremiah-carlson/solid-scan/actions/workflows/azure-static-web-apps-salmon-rock-0523f670f.yml/badge.svg)](https://github.com/jeremiah-carlson/solid-scan/actions/workflows/azure-static-web-apps-salmon-rock-0523f670f.yml)
