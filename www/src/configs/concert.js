@@ -1,4 +1,5 @@
 const conf = {
+    debug: true,
     output: {
         origin: origin,
         path: 'scan/output/',
@@ -10,7 +11,7 @@ const conf = {
     categories: [
         {
             name: 'city',
-            options: ['Austin','Atlanta','Tennessee', 'Chicago','Baltimore','New Orleans','Boulder']
+            options: ['Austin','Atlanta','Tennessee', 'Chicago','Baltimore','New Orleans','Boulder', 'NYC']
         },
         {
             name: 'artist',

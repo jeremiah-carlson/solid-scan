@@ -6,7 +6,7 @@ export const [dialogVis, setDialogVis] = createSignal(Array.from({length: 20}, (
 
 const SettingDialog = (props)=>{
     return (
-        <dialog open={dialogVis()[Number(props.index)]} id={'dialog-'+props.setting} class="z-[999] bg-slate-900 absolute top-0 left-0 w-screen h-screen">
+        <dialog open={dialogVis()[Number(props.index)]} id={'dialog-'+props.setting} class="z-[999] bg-slate-900 absolute top-0 left-0 w-full h-full p-10">
             <QRArray qrList={props.qrList}/>
         </dialog>
     )

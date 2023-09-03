@@ -15,7 +15,7 @@ const conf = {
         },
         {
             name: 'test2',
-            options: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+            options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
         },
     ],
     input: {

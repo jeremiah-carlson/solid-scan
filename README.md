@@ -10,7 +10,7 @@
 </div>
 
 # Summary
-Solid Scan is designed to be a simple and easily configurable web based QR code logger. It achieves this throught he use of a single config file, allowing the user to predefine delimiters, value labels, selectable categories, backend-service, ect.
+Solid Scan is designed to be a simple and easily configurable web based QR code logger. It achieves this through he use of a single config file, allowing the user to predefine delimiters, value labels, selectable categories, backend-service, ect.
 
 ## Sample Config File
 ```javascript
