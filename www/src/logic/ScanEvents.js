@@ -32,7 +32,7 @@ const handleScanEvent = (event, conf)=>{
             localStorage.setItem(`defaultCategory${conf.categories[tmpSetting.index-1].name}`, tmpSetting.option);
         };
         
-        console.log('Is Setting');
+        (conf.debug == true) ? console.log('Is Setting') : undefined;
 
     } else if (entry.split(conf.delims.mainInput).length == conf.input.labels.length) {// Valid Entry
         setScanValidation(true);
@@ -43,18 +43,16 @@ const handleScanEvent = (event, conf)=>{
         setLastScan(FormatDisplayedInput(inputParsed));
         scanQueue.push({destination: postURL, data: bdyData});
         
-        //PostMain(postURL, AssembleBodyData(inputParsed));
-        console.log(scanQueue);
-        console.log('Is Input');
+        (conf.debug == true) ? console.log(scanQueue) : undefined;
+        (conf.debug == true) ? console.log('Is Input') : undefined;
         setTimeout(()=>{setScanValidation(false)}, 500);
     } else {// Invalid
         setLastScan(`Invalid Input: ${entry}`);
-        console.log(`Invalid Input: ${entry}`);
+        (conf.debug == true) ? console.log(`Invalid Input: ${entry}`) : undefined;
     };
 
     document.querySelector("#MainInput").value = '';
     let inpList = event.target.querySelectorAll('input:not([type=submit])');
-    //console.log(`Submitted: ${event.timeStamp}`, inpList);
 };
 
 

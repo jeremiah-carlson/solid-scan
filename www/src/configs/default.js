@@ -1,4 +1,5 @@
 const conf = {
+    debug: true,
     output: {
         origin: origin,
         path: 'scan/output/',

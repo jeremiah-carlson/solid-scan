@@ -29,7 +29,7 @@ export function PostMain(queue){
             })
     } else {
         console.log('Request queue is empty');
-        setTimeout(()=>{PostMain(queue)}, 10*1000);
+        setTimeout(()=>{PostMain(queue)}, 2*60*1000);
     }
 
 };
