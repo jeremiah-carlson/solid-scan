@@ -7,10 +7,16 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jeremiah-carlson/solid-scan)
 ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/jeremiah-carlson/solid-scan)
 
+<br>
+
+![Sample](./assets/solid-scan-sample.gif)
+
 </div>
 
 # Summary
 Solid Scan is designed to be a simple and easily configurable web based QR code logger. It achieves this through he use of a single config file, allowing the user to predefine delimiters, value labels, selectable categories, backend-service, ect.
+
+
 
 ## Sample Config File
 ```javascript
