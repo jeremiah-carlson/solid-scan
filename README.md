@@ -9,7 +9,7 @@
 
 <br>
 
-![Sample](./assets/solid-scan-sample.gif)
+![Sample](./docs/assets/solid-scan-sample.gif)
 
 </div>
 
