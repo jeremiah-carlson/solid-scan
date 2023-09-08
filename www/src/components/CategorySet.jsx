@@ -9,7 +9,7 @@ const Category = (props)=>{
     let index = Number(props.index);
     return (
         <div class="flex flex-col justify-center align-middle">
-                    <h1 class="text-slate-100 text-center text-3xl p-2 capitalize">{cat.name}</h1>
+                    <h1 class="text-slate-100 text-center text-3xl p-2 capitalize">{ cat.alias ?? cat.name}</h1>
                     <h1 name={cat.name} class="text-xl text-center bg-slate-400 cust-category capitalize" data-category={cat.name} data-option={cat.options[state[index].currentId]}>{cat.options[state[index].currentId]}</h1>
         </div>
     )
