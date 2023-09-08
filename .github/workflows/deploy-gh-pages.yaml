@@ -1,6 +1,9 @@
 name: deploy-gh-pages
 on: workflow_dispatch
 
+env:
+  HASH_ROUTING: true
+
 jobs:
   # Build job
   build:

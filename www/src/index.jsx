@@ -13,8 +13,10 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
+const routerSrc = (import.meta.env['HASH_ROUTING'] == true)? hashIntegration() : null;
+
 render(() =>  (
-    <Router source={hashIntegration()}>
+    <Router source={routerSrc}>
       <Routes>
         <Route path="/" component={Default} />
         <Route path="/concert/" component={Concert} />
