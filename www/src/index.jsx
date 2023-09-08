@@ -1,6 +1,6 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
-import { Router, Route, Routes } from "@solidjs/router";
+import { Router, Route, Routes, hashIntegration } from "@solidjs/router";
 
 import './index.css';
 import { Concert, Default } from './pages/Production';
@@ -14,7 +14,7 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 }
 
 render(() =>  (
-    <Router>
+    <Router source={hashIntegration()}>
       <Routes>
         <Route path="/" component={Default} />
         <Route path="/concert/" component={Concert} />
