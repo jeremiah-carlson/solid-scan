@@ -13,7 +13,7 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
-const routerSrc = (import.meta.env['HASH_ROUTING'] == true)? hashIntegration() : null;
+const routerSrc = (["hash", "HASH"].includes(import.meta.env.VITE_ROUTING))? hashIntegration() : null;
 
 render(() =>  (
     <Router source={routerSrc}>

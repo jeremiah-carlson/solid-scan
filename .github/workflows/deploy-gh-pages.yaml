@@ -1,9 +1,6 @@
 name: Deploy GitHub Pages
 on: workflow_dispatch
 
-env:
-  HASH_ROUTING: true
-
 jobs:
   # Build job
   build:
@@ -16,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
+      - run: mv .env.github .env
       - run: npm install .
       - run: npm run build
       - uses: actions/upload-pages-artifact@v2
