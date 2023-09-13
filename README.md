@@ -14,6 +14,10 @@
 
 </div>
 
+# Contents
+1. [Summary](#sumamry)
+2. [Quick Start](#quick-start)
+
 # Summary
 Solid Scan is designed to be a simple and easily configurable web based QR code logger. It achieves this through he use of a single config file, allowing the user to predefine delimiters, value labels, selectable categories, backend-service, ect.
 
@@ -33,6 +37,7 @@ const conf = {
     categories: [// These catagories will be sent with each request and are configurable within the UI
         {
             name: 'city',
+            //alias: City / Region, //(optional)
             options: ['Austin','Atlanta','Tennessee', 'Chicago','Baltimore','New Orleans','Boulder']
         },
         {
@@ -57,4 +62,12 @@ const conf = {
 };
 
 export default conf;
+```
+
+# Quick Start
+To test out Solid Scan, clone this repo locally and run the following commands:
+```bash
+cd www
+npm install
+nrm run dev
 ```
