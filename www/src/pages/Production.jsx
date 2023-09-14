@@ -1,12 +1,10 @@
 import Abstract from './Abstract';
 
-import defaultCfg from '../configs/default';// <-- Change config file
-import concertCfg from '../configs/concert';
+import * as Configs from "../configs/modules/production"
 
-export function Default() {// <-- Change function name
-    return (<Abstract conf={defaultCfg}/>);// <-- Match config import
-};
-
-export function Concert() {
-return (<Abstract conf={concertCfg}/>);
-};
+export const Pages = Object.entries(Configs).map((cfg)=>{
+    return {
+        name: cfg[0],
+        func: ()=>{return (<Abstract conf={cfg[1]}/>);}
+    }
+});
