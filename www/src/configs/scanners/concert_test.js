@@ -1,4 +1,6 @@
 const conf = {
+    name: "concert",
+    routePrefix: "/test",
     debug: true,
     output: {
         origin: origin,
@@ -15,6 +17,7 @@ const conf = {
         },
         {
             name: 'artist',
+            alias: 'Band',
             options: ['Lightning Hopkins', 'SRV', 'Eric Clapton', 'Muddy Waters', 'Lemon Jefferson', 'Buddy Guy', 'John Hurt']
         },
         {

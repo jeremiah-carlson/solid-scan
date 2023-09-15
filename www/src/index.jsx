@@ -20,7 +20,7 @@ render(() =>  (
     <Router source={routerSrc}>
       <Routes>
         <For each={Pages}>{
-          (pg, i)=> <Switch fallback={<Route path={`/${pg.name.toLowerCase()}`} component={pg.func}/>}>
+          (pg, i)=> <Switch fallback={<Route path={`${pg.routePrefix}/${pg.name.toLowerCase()}`} component={pg.func}/>}>
                       <Match when={pg.name.toLowerCase() == rootPage}>
                         <Route path="/" component={pg.func}/>
                       </Match>
