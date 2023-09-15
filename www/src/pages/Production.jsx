@@ -1,6 +1,6 @@
 import Abstract from './Abstract';
 
-import * as Configs from "../configs/modules/production"
+import * as Configs from "../configs/config"
 
 export const Pages = Object.entries(Configs).map((cfg)=>{
     return {
