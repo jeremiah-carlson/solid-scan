@@ -1,8 +1,8 @@
 const conf = {
     debug: false,
     output: {
-        origin: origin,
-        path: 'scan/output/',
+        origin: "http://localhost:8080/",
+        path: 'qrscan',
     },
     delims: {
         settings: '@@',
@@ -29,7 +29,8 @@ const conf = {
     input: {
         labels: ['ticketNo', 'section', 'seat'],
         constants: {
-            'company': 'Ticket CO.',
+            queueId: 'concert',
+            company: 'Ticket CO.',
         },
     },
 };

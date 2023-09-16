@@ -1,8 +1,8 @@
 const conf = {
     debug: true,
     output: {
-        origin: origin,
-        path: 'scan/output/',
+        origin: "http://localhost:8080/",
+        path: 'qrscan',
     },
     delims: {
         settings: '@@',
