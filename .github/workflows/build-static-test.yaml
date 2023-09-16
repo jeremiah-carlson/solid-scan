@@ -14,7 +14,6 @@ jobs:
         with:
           node-version: '18'
       - run: echo '${{ vars.CONFIG_FILE }}' > ./src/configs/config.js
-      - run: cat ./src/configs/config.js
       - run: npm install .
       - run: npm run build
       - uses: actions/upload-artifact@v3
