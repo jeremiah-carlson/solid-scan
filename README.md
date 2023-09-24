@@ -25,6 +25,9 @@ Solid Scan is designed to be a simple and easily configurable web based QR code 
 ## Sample Config File
 ```javascript
 const conf = {
+    name: "concert", // URL = https://<host>/<routePrefix>/<name>
+    routePrefix: "/test",
+    debug: flase,
     output: {// Backend Service
         origin: origin,
         path: 'scan/output/',
@@ -68,5 +71,5 @@ To test out Solid Scan, clone this repo locally and run the following commands:
 ```bash
 cd www
 npm install
-nrm run dev
+npm run dev
 ```
