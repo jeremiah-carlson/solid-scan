@@ -10,7 +10,7 @@ const qrClick = (data, event)=>{
 const QR = (props)=>{
   let qrUrl = '';
 
-  QRCode.toString(props.qrString, { errorCorrectionLevel: 'H' }, (err, url)=>{
+  QRCode.toString(props.qrString, { type: "svg", errorCorrectionLevel: 'H' }, (err, url)=>{
     if (err == null){
       //console.log(url);
       qrUrl = url;
@@ -21,11 +21,9 @@ const QR = (props)=>{
   });
 
   return (
-    <div class="flex flex-col justify-center align-middle">
-    <h1 class="text-slate-200 text-center font-bold">{props.label}</h1>
-    <a href="#"  onDblClick={[qrClick, props.qrString]} class='z-200'>
-    <div class={`${props.rounded} overflow-clip flex flex-col justify-center align-middle`} innerHTML={qrUrl}></div>
-    </a>
+    <div class="flex flex-col justify-center align-middle relative w-full h-full">
+    <h1 class="text-slate-700 text-center w-full font-semibold text-lg z-[900] absolute left-0 top-0">{props.label}</h1>
+    <a href="#"  onDblClick={[qrClick, props.qrString]} class='z-200 absolute left-0 top-0 w-full text-align-center' innerHTML={qrUrl}/>
     </div>
   );
 };
