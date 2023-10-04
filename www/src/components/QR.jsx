@@ -12,7 +12,6 @@ const QR = (props)=>{
 
   QRCode.toString(props.qrString, { type: "svg", errorCorrectionLevel: 'H' }, (err, url)=>{
     if (err == null){
-      //console.log(url);
       qrUrl = url;
     } else {
       console.log(err);
