@@ -1,31 +1,30 @@
 import QR from './QR'
 
 //import conf from '../configs/default';
-
 const gridCalc = {
-
-    cols: (arrLen)=>{
-        return `grid-cols-${Math.ceil((arrLen+1) / 2)}`
-    },
-
-    rows: (arrLen)=>{
-        return `grid-rows-${Math.ceil((arrLen+1) / 4)}`
+    cols: (arrLen) => {
+        let additionalCols = Math.ceil((arrLen-6) / 3); 
+        let xs = 2 + additionalCols;
+        let small = 3 + additionalCols;
+        let medium = 3 + additionalCols;
+        let large = 3 + additionalCols;
+        let xl = 4 + additionalCols;
+        if (arrLen < 5) {
+            xs = small = medium = large = xl = arrLen;
+        }
+        return `grid-cols-${xs} sm:grid-cols-${small} md:grid-cols-${medium} lg:grid-cols-${large} xl:grid-cols-${xl}`;
     }
-
 };
 
 
-
-const QRArray = (props)=>{
-
-
+//${gridCalc.cols(props.qrList.length)}
+const QRArray = (props) => {
     return (
-        <div class={`w-full h-full grid grid-flow-col ${gridCalc.cols(props.qrList.length)} ${gridCalc.rows(props.qrList.length)} gap-20`}>
+        <div className={`w-full mx-auto h-full grid ${gridCalc.cols(props.qrList.length)} justify-center gap-5 md:gap-10`}>
             <For each={props.qrList}>{
-                (qr, i)=><QR rounded="rounded-none" label={qr.label} qrString={qr.value}></QR>
+                (qr, i) => <QR rounded="rounded-none" label={qr.label} qrString={qr.value}></QR>
             }</For>
         </div>
-
     );
 };
 
