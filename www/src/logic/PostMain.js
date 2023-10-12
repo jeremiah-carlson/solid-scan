@@ -18,7 +18,7 @@ export function PostMain(queue){
                     case 404:
                         console.log('Not found!');
                         queue.push(req);
-                        setTimeout(()=>{PostMain(queue)}, 15*60*1000);
+                        setTimeout(()=>{PostMain(queue)}, 2*60*1000);
                         break;
                     default:
                         console.log(resp);
